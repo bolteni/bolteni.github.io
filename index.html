@@ -1,7 +1,60 @@
-<!DOCTYPE html>
 <html>
-<body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
-</body>
+	<head>
+		<link rel="stylesheet" type="text/css" href="calendar.css">
+	</head>
+	<body>
+		<div>
+			<div>
+				<div id="calendar_header">
+					<div id="nav_container">
+						<h3>
+							<button id="prev" onclick="prev()"><<</button>
+							<span id="monthAndYear"></span>
+							<button id="next" onclick="next()">>></button>
+							<button id="goToToday" onclick="goToToday()">Сегодня</button>					
+						</h3>
+					</div>
+					<div id="autocomplete_container">
+						<input id="autocomplete" type="text" placeholder="Поиск событий" />
+						<div id="autocomplete_result" style="display: none;"></div>
+					</div>
+				</div>	
+				<div>
+					<table id="calendar">
+						<thead>
+							<tr>
+								<th>Воскресенье</th>
+								<th>Понедельник</th>
+								<th>Вторник</th>
+								<th>Среда</th>
+								<th>Четверг</th>
+								<th>Пятница</th>
+								<th>Суббота</th>
+							</tr>
+						</thead>
+						<tbody id="calendar-table">
+
+						</tbody>
+					</table>    
+				</div>
+			</div>
+		</div>
+
+		<div id="myModal" class="modal">
+			<!-- Modal content -->
+			<div class="modal-content">
+				<span class="close">&times;</span>
+				<h3 id="dateString"></h3>
+				<input type="hidden" id="eventDate" />
+				<span>Событие:</span><input type="text" id="eventName" /><br>
+				<span>Участники:</span><input type="text" id="eventPersons" /><br>
+				<span>Событие:</span><textarea id="eventDescription"></textarea><br>
+				<button id="saveEvent">Сохранить событие</button>
+				<button id="deleteEvent">Удалить событие</button>
+			</div>
+		</div>
+	</body>
+	<footer>
+		<script  src="calendar.js"></script>
+	</footer>
 </html>
