@@ -129,6 +129,8 @@ function displayModal(e) {
 	let id = e.currentTarget.dataset["id"] !== undefined ? parseInt(e.currentTarget.dataset["id"]) : undefined;
 	let newEvent = e.currentTarget.dataset["id"] === undefined;
 	
+	delete document.getElementById("saveEvent").dataset["id"];
+	
 	if (!newEvent){
 		e.stopPropagation();
 		let list = localStorage["eventList"] != undefined ? JSON.parse(localStorage["eventList"]) : [];
